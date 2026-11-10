@@ -3,173 +3,379 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Doanh Nghiệp TheVan</title>
+    <title>Website Doanh Nghiệp TheVan - Enterprise Architecture</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Font Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0b0f17; color: #e2e8f0; }
         .glass-panel { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
         .custom-scroll::-webkit-scrollbar { width: 6px; }
         .custom-scroll::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        .tree-node-content { transition: all 0.2s ease-in-out; }
     </style>
 </head>
-<body class="min-h-screen">
+<body class="min-h-screen flex flex-col justify-between">
 
-    <!-- HEADER PRO -->
-    <header class="sticky top-0 z-50 glass-panel border-b border-slate-800 px-8 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-amber-500 rounded-lg flex items-center justify-center text-slate-950 font-black text-2xl shadow-lg shadow-amber-500/20">
-                    TV
-                </div>
-                <div>
-                    <div class="flex items-center space-x-2">
-                        <span class="text-xl font-extrabold text-white tracking-wide">THEVAN</span>
-                        <span class="bg-slate-800 text-amber-400 border border-amber-500/30 text-[10px] font-bold px-2 py-0.5 rounded">CORP</span>
+    <div>
+        <!-- HEADER PRO -->
+        <header class="sticky top-0 z-50 glass-panel border-b border-slate-800 px-8 py-4">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                <div class="flex items-center space-x-4 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <div class="w-12 h-12 bg-amber-500 rounded-lg flex items-center justify-center text-slate-950 font-black text-2xl shadow-lg shadow-amber-500/20">
+                        TV
                     </div>
-                    <p class="text-[11px] text-slate-400 font-medium tracking-wider">ENTERPRISE ARCHITECTURE</p>
+                    <div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-xl font-extrabold text-white tracking-wide">THEVAN</span>
+                            <span class="bg-slate-800 text-amber-400 border border-amber-500/30 text-[10px] font-bold px-2 py-0.5 rounded">CORP</span>
+                        </div>
+                        <p class="text-[11px] text-slate-400 font-medium tracking-wider">ENTERPRISE ARCHITECTURE</p>
+                    </div>
                 </div>
+
+                <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-300">
+                    <a href="#ve-thevan" class="hover:text-amber-400 transition">Về TheVan</a>
+                    <a href="#dich-vu" class="hover:text-amber-400 transition">Dịch vụ cốt lõi</a>
+                    <a href="#tra-cuu" class="text-amber-400 font-bold border-b-2 border-amber-400 pb-1">Kho Tài Liệu Mẫu</a>
+                    <a href="#du-an" class="hover:text-amber-400 transition">Dự án & Đối tác</a>
+                    <a href="#lien-he" class="hover:text-amber-400 transition">Liên hệ</a>
+                </nav>
+
+                <button class="bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-bold text-sm px-5 py-2.5 rounded-lg shadow-lg hover:brightness-110 transition flex items-center space-x-2">
+                    <i class="fa-solid fa-calendar-check text-xs"></i>
+                    <span>Đăng ký Tư vấn</span>
+                </button>
             </div>
+        </header>
 
-            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-300">
-                <a href="#" class="hover:text-amber-400 transition">Về TheVan</a>
-                <a href="#" class="hover:text-amber-400 transition">Dịch vụ cốt lõi</a>
-                <a href="#tra-cuu" class="text-amber-400 font-bold border-b-2 border-amber-400 pb-1">Kho Tài Liệu Mẫu</a>
-                <a href="#" class="hover:text-amber-400 transition">Dự án & Đối tác</a>
-                <a href="#" class="hover:text-amber-400 transition">Liên hệ</a>
-            </nav>
-
-            <button class="bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-bold text-sm px-5 py-2.5 rounded-lg shadow-lg hover:brightness-110 transition flex items-center space-x-2">
-                <i class="fa-solid fa-calendar-check text-xs"></i>
-                <span>Đăng ký Tư vấn</span>
-            </button>
+        <!-- SUB-BANNER -->
+        <div class="text-center py-3 bg-slate-900/60 border-b border-slate-800/80 text-xs text-slate-400">
+            Mô phỏng giao diện tra cứu quy trình văn bản 3 cấp mà TheVan triển khai cho khách hàng (Tương thích nhúng Google Sites / Intranet).
         </div>
-    </header>
 
-    <!-- SUB-BANNER -->
-    <div class="text-center py-4 bg-slate-900/50 border-b border-slate-800/80 text-xs text-slate-400">
-        Mô phỏng giao diện tra cứu quy trình văn bản 3 cấp mà TheVan triển khai cho khách hàng (Tương thích nhúng Google Sites / Intranet).
-    </div>
-
-    <!-- MAIN APP WIDGET: THEVAN DOCS VIEWER v2.4 -->
-    <main id="tra-cuu" class="max-w-7xl mx-auto px-6 py-8">
-        <div class="glass-panel rounded-2xl overflow-hidden shadow-2xl border border-slate-800">
-            
-            <!-- TOP BAR CONTROL -->
-            <div class="bg-slate-900 px-6 py-3.5 border-b border-slate-800 flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <div class="flex space-x-2">
-                        <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-                        <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                        <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-                    </div>
-                    <span class="text-xs font-mono text-slate-400 ml-2">thevan-docs-viewer v2.4 (Static Knowledge System)</span>
-                </div>
-                <div class="relative w-72">
-                    <input type="text" placeholder="🔍 Tìm quy trình, mẫu biểu..." class="w-full bg-slate-950 border border-slate-800 text-xs text-slate-200 rounded-lg px-3 py-1.5 focus:outline-none focus:border-amber-500/50">
-                </div>
-            </div>
-
-            <!-- LAYOUT 2 CỘT -->
-            <div class="grid grid-cols-12 min-h-[580px]">
+        <!-- MAIN APP WIDGET: THEVAN DOCS VIEWER v2.4 -->
+        <main id="tra-cuu" class="max-w-7xl mx-auto px-6 py-8">
+            <div class="glass-panel rounded-2xl overflow-hidden shadow-2xl border border-slate-800">
                 
-                <!-- CỘT TRÁI: CÂY THƯ MỤC 3 CẤP -->
-                <div class="col-span-4 bg-slate-950/70 border-r border-slate-800 p-4 custom-scroll overflow-y-auto">
-                    <div class="text-[11px] font-bold text-slate-500 tracking-wider uppercase mb-4 px-2">Cây thư mục nội bộ</div>
+                <!-- TOP BAR CONTROL -->
+                <div class="bg-slate-900 px-6 py-3.5 border-b border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                        </div>
+                        <span class="text-xs font-mono text-slate-400 ml-2">thevan-docs-viewer v2.4 (Static Knowledge System)</span>
+                    </div>
+                    <div class="relative w-full md:w-80">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-500 text-xs"></i>
+                        <input type="text" id="searchInput" onkeyup="filterDocs()" placeholder="Tìm quy trình, mẫu biểu..." class="w-full bg-slate-950 border border-slate-800 text-xs text-slate-200 rounded-lg pl-8 pr-3 py-2 focus:outline-none focus:border-amber-500/50">
+                    </div>
+                </div>
+
+                <!-- LAYOUT 2 CỘT -->
+                <div class="grid grid-cols-12 min-h-[620px]">
                     
-                    <div class="space-y-2 text-xs">
-                        <!-- Thư mục cấp 1 -->
-                        <div>
-                            <div class="flex items-center space-x-2 p-2 rounded-lg bg-slate-900 text-amber-400 font-semibold cursor-pointer">
-                                <i class="fa-solid fa-folder-open text-amber-500"></i>
-                                <span>01. QUẢN TRỊ HỆ THỐNG</span>
-                            </div>
-                            
-                            <!-- Thư mục cấp 2 -->
-                            <div class="ml-4 mt-1 space-y-1 border-l-2 border-slate-800 pl-2">
-                                <div class="flex items-center space-x-2 p-1.5 text-slate-300 font-medium cursor-pointer hover:text-white">
-                                    <i class="fa-solid fa-folder-open text-slate-500"></i>
-                                    <span>1.1 Quy Định Chung</span>
+                    <!-- CỘT TRÁI: CÂY THƯ MỤC 3 CẤP TƯƠNG TÁC DỘNG -->
+                    <div class="col-span-12 md:col-span-4 bg-slate-950/80 border-r border-slate-800 p-4 custom-scroll overflow-y-auto max-h-[620px]">
+                        <div class="flex justify-between items-center mb-4 px-2">
+                            <span class="text-[11px] font-bold text-slate-500 tracking-wider uppercase">Cây thư mục nội bộ</span>
+                            <span class="text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded" id="docCount">6 tài liệu</span>
+                        </div>
+                        
+                        <div class="space-y-2 text-xs" id="treeRoot">
+                            <!-- FOLDER 1 -->
+                            <div class="folder-group">
+                                <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900 text-amber-400 font-semibold cursor-pointer select-none" onclick="toggleFolder('f1', this)">
+                                    <div class="flex items-center space-x-2">
+                                        <i class="fa-solid fa-folder-open text-amber-500 folder-icon"></i>
+                                        <span>01. QUẢN TRỊ HỆ THỐNG</span>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200"></i>
                                 </div>
                                 
-                                <!-- File cấp 3 -->
-                                <div class="ml-4 space-y-1 border-l border-slate-800/60 pl-2">
-                                    <div class="flex items-center justify-between p-1.5 rounded bg-amber-500/10 text-amber-300 font-medium border border-amber-500/30 cursor-pointer">
-                                        <div class="flex items-center space-x-2">
-                                            <i class="fa-regular fa-file-code"></i>
-                                            <span>QD-01-Co-Cau-To-Chuc.md</span>
+                                <div id="f1" class="ml-3 mt-1 space-y-1 border-l-2 border-slate-800 pl-2">
+                                    <!-- SUB FOLDER 1.1 -->
+                                    <div class="sub-folder-group">
+                                        <div class="flex items-center justify-between p-1.5 text-slate-300 font-medium cursor-pointer hover:text-white select-none" onclick="toggleFolder('f1-1', this)">
+                                            <div class="flex items-center space-x-2">
+                                                <i class="fa-solid fa-folder-open text-slate-500 folder-icon"></i>
+                                                <span>1.1 Quy Định Chung</span>
+                                            </div>
+                                            <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200"></i>
+                                        </div>
+                                        
+                                        <div id="f1-1" class="ml-3 space-y-1 border-l border-slate-800/60 pl-2">
+                                            <div class="doc-item flex items-center space-x-2 p-1.5 rounded bg-amber-500/10 text-amber-300 font-medium border border-amber-500/30 cursor-pointer" onclick="loadDocument('doc1', this)">
+                                                <i class="fa-regular fa-file-code"></i>
+                                                <span class="doc-title">QD-01-Co-Cau-To-Chuc.md</span>
+                                            </div>
+                                            <div class="doc-item flex items-center space-x-2 p-1.5 rounded text-slate-400 hover:text-slate-200 hover:bg-slate-900/50 cursor-pointer" onclick="loadDocument('doc2', this)">
+                                                <i class="fa-regular fa-file-lines"></i>
+                                                <span class="doc-title">QD-02-Bao-Mat-Du-Lieu.md</span>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="flex items-center space-x-2 p-1.5 text-slate-400 hover:text-slate-200 cursor-pointer">
-                                        <i class="fa-regular fa-file-lines text-slate-600"></i>
-                                        <span>QD-02-Bao-Mat-Du-Lieu.md</span>
+
+                                    <!-- SUB FOLDER 1.2 -->
+                                    <div class="sub-folder-group">
+                                        <div class="flex items-center justify-between p-1.5 text-slate-300 font-medium cursor-pointer hover:text-white select-none" onclick="toggleFolder('f1-2', this)">
+                                            <div class="flex items-center space-x-2">
+                                                <i class="fa-solid fa-folder text-slate-500 folder-icon"></i>
+                                                <span>1.2 Nhân Sự & KPI</span>
+                                            </div>
+                                            <i class="fa-solid fa-chevron-right text-[10px] transition-transform duration-200"></i>
+                                        </div>
+                                        <div id="f1-2" class="hidden ml-3 space-y-1 border-l border-slate-800/60 pl-2">
+                                            <div class="doc-item flex items-center space-x-2 p-1.5 rounded text-slate-400 hover:text-slate-200 hover:bg-slate-900/50 cursor-pointer" onclick="loadDocument('doc3', this)">
+                                                <i class="fa-regular fa-file-lines"></i>
+                                                <span class="doc-title">QD-03-Danh-Gia-KPI.md</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Thư mục cấp 1 khác -->
-                        <div>
-                            <div class="flex items-center space-x-2 p-2 rounded-lg hover:bg-slate-900 text-slate-400 font-semibold cursor-pointer">
-                                <i class="fa-solid fa-folder text-slate-600"></i>
-                                <span>02. QUY TRÌNH VẬN HÀNH</span>
+                            <!-- FOLDER 2 -->
+                            <div class="folder-group">
+                                <div class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-900 text-slate-300 font-semibold cursor-pointer select-none" onclick="toggleFolder('f2', this)">
+                                    <div class="flex items-center space-x-2">
+                                        <i class="fa-solid fa-folder text-slate-500 folder-icon"></i>
+                                        <span>02. QUY TRÌNH VẬN HÀNH (SOP)</span>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-right text-[10px] transition-transform duration-200"></i>
+                                </div>
+                                <div id="f2" class="hidden ml-3 mt-1 space-y-1 border-l-2 border-slate-800 pl-2">
+                                    <div class="doc-item flex items-center space-x-2 p-1.5 rounded text-slate-400 hover:text-slate-200 hover:bg-slate-900/50 cursor-pointer" onclick="loadDocument('doc4', this)">
+                                        <i class="fa-regular fa-file-code"></i>
+                                        <span class="doc-title">SOP-KT-01-Lap-Bao-Cao-Tai-Chinh.md</span>
+                                    </div>
+                                    <div class="doc-item flex items-center space-x-2 p-1.5 rounded text-slate-400 hover:text-slate-200 hover:bg-slate-900/50 cursor-pointer" onclick="loadDocument('doc5', this)">
+                                        <i class="fa-regular fa-file-code"></i>
+                                        <span class="doc-title">SOP-AI-02-Tich-Hop-n8n-Workflow.md</span>
+                                    </div>
+                                </div>
                             </div>
+
+                            <!-- FOLDER 3 -->
+                            <div class="folder-group">
+                                <div class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-900 text-slate-300 font-semibold cursor-pointer select-none" onclick="toggleFolder('f3', this)">
+                                    <div class="flex items-center space-x-2">
+                                        <i class="fa-solid fa-folder text-slate-500 folder-icon"></i>
+                                        <span>03. MẪU BIỂU & BÁO CÁO</span>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-right text-[10px] transition-transform duration-200"></i>
+                                </div>
+                                <div id="f3" class="hidden ml-3 mt-1 space-y-1 border-l-2 border-slate-800 pl-2">
+                                    <div class="doc-item flex items-center space-x-2 p-1.5 rounded text-slate-400 hover:text-slate-200 hover:bg-slate-900/50 cursor-pointer" onclick="loadDocument('doc6', this)">
+                                        <i class="fa-regular fa-file-lines"></i>
+                                        <span class="doc-title">BM-01-Bang-Kiem-Soat-Noi-Bo.xlsx</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- CỘT PHẢI: XEM NỘI DUNG TÀI LIỆU DỘNG -->
+                    <div class="col-span-12 md:col-span-8 bg-slate-900/40 p-6 md:p-8 custom-scroll overflow-y-auto max-h-[620px]" id="docViewer">
+                        <!-- Nội dung document 1 mặc định -->
+                        <div class="flex flex-col sm:flex-row justify-between items-start gap-4 border-b border-slate-800 pb-6 mb-6">
+                            <div>
+                                <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[10px] font-bold px-2 py-0.5 rounded uppercase">DOCUMENT VIEWER</span>
+                                <h1 class="text-2xl font-bold text-white mt-2" id="docViewerTitle">QD-01-Co-Cau-To-Chuc.md</h1>
+                                <p class="text-xs text-slate-500 mt-1" id="docViewerMeta">Đã đồng bộ lần cuối: Hôm nay bởi Hệ thống Automerge TheVan</p>
+                            </div>
+                            <button class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold px-4 py-2 rounded-lg border border-slate-700 flex items-center space-x-2 transition shrink-0">
+                                <i class="fa-solid fa-download"></i>
+                                <span>Tải Mẫu Word</span>
+                            </button>
                         </div>
 
-                        <div>
-                            <div class="flex items-center space-x-2 p-2 rounded-lg hover:bg-slate-900 text-slate-400 font-semibold cursor-pointer">
-                                <i class="fa-solid fa-folder text-slate-600"></i>
-                                <span>03. MẪU BIỂU KẾ TOÁN</span>
+                        <!-- BODY NỘI DUNG -->
+                        <div class="space-y-6 text-sm text-slate-300 leading-relaxed" id="docViewerBody">
+                            <div>
+                                <h2 class="text-lg font-bold text-amber-400 mb-2">1. Mục Đích & Phạm Vi Áp Dụng</h2>
+                                <p class="text-slate-400">Quy định này thiết lập sơ đồ tổ chức bộ máy, phân định rõ ràng quyền hạn và trách nhiệm của các phòng ban thuộc Công ty TheVan, áp dụng cho toàn thể nhân sự và các đối tác liên kết vận hành.</p>
+                            </div>
+
+                            <div>
+                                <h2 class="text-lg font-bold text-amber-400 mb-2">2. Sơ Đồ Khối Chức Năng</h2>
+                                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 font-mono text-xs text-emerald-400 space-y-1">
+                                    <p>[Ban Giám Đốc] ───► [Bộ Phận Tư Vấn Kế Toán & Thuế]</p>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│</p>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├───────► [Khối Tiêu Chuẩn Hóa Vận Hành (SOP)]</p>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└───────► [Trung Tâm Tự Động Hóa & AI]</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h2 class="text-lg font-bold text-amber-400 mb-2">3. Trách Nhiệm Cốt Lõi</h2>
+                                <ul class="list-disc pl-5 space-y-2 text-slate-400">
+                                    <li><strong class="text-slate-200">Khối SOP:</strong> Đảm bảo 100% quy trình làm việc được số hóa và chuẩn hóa văn bản.</li>
+                                    <li><strong class="text-slate-200">Khối Kế Toán:</strong> Đảm bảo tính tuân thủ pháp lý và tối ưu dòng tiền tài chính.</li>
+                                    <li><strong class="text-slate-200">Khối AI & Automation:</strong> Tích hợp luồng n8n và Trợ lý tri thức doanh nghiệp.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+
                 </div>
-
-                <!-- CỘT PHẢI: KHUNG HIỂN THỊ NỘI DUNG VĂN BẢN -->
-                <div class="col-span-8 bg-slate-900/40 p-8 custom-scroll overflow-y-auto">
-                    <div class="flex justify-between items-start border-b border-slate-800 pb-6 mb-6">
-                        <div>
-                            <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[10px] font-bold px-2 py-0.5 rounded uppercase">DOCUMENT VIEWER</span>
-                            <h1 class="text-2xl font-bold text-white mt-2">QD-01-Co-Cau-To-Chuc.md</h1>
-                            <p class="text-xs text-slate-500 mt-1">Đã đồng bộ lần cuối: Hôm nay bởi Hệ thống Automerge TheVan</p>
-                        </div>
-                        <button class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold px-4 py-2 rounded-lg border border-slate-700 flex items-center space-x-2 transition">
-                            <i class="fa-solid fa-download"></i>
-                            <span>Tải Mẫu Word</span>
-                        </button>
-                    </div>
-
-                    <!-- NỘI DUNG VĂN BẢN CHI TIẾT -->
-                    <div class="space-y-6 text-sm text-slate-300 leading-relaxed">
-                        <div>
-                            <h2 class="text-lg font-bold text-amber-400 mb-2">1. Mục Đích & Phạm Vi Áp Dụng</h2>
-                            <p class="text-slate-400">Quy định này thiết lập sơ đồ tổ chức bộ máy, phân định rõ ràng quyền hạn và trách nhiệm của các phòng ban thuộc Công ty TheVan, áp dụng cho toàn thể nhân sự và các đối tác liên kết vận hành.</p>
-                        </div>
-
-                        <div>
-                            <h2 class="text-lg font-bold text-amber-400 mb-2">2. Sơ Đồ Khối Chức Năng</h2>
-                            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 font-mono text-xs text-emerald-400 space-y-1">
-                                <p>[Ban Giám Đốc] ───► [Bộ Phận Tư Vấn Kế Toán & Thuế]</p>
-                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│</p>
-                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├───────► [Khối Tiêu Chuẩn Hóa Vận Hành (SOP)]</p>
-                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└───────► [Trung Tâm Tự Động Hóa & AI]</p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h2 class="text-lg font-bold text-amber-400 mb-2">3. Trách Nhiệm Cốt Lõi</h2>
-                            <ul class="list-disc pl-5 space-y-1 text-slate-400">
-                                <strong class="text-slate-200">Khối SOP:</strong> Đảm bảo 100% quy trình làm việc được số hóa và chuẩn hóa văn bản.
-                                <strong class="text-slate-200">Khối AI & Automation:</strong> Tích hợp luồng n8n và Trợ lý tri thức doanh nghiệp.
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </div>
-    </main>
+        </main>
+    </div>
 
+    <!-- JAVASCRIPT XỬ LÝ TÍNH NĂNG ĐỘNG -->
+    <script>
+        // Data kho tài liệu tĩnh để load nội dung dynamic
+        const docDatabase = {
+            doc1: {
+                title: "QD-01-Co-Cau-To-Chuc.md",
+                meta: "Đã đồng bộ lần cuối: Hôm nay bởi Hệ thống Automerge TheVan",
+                content: `
+                    <div>
+                        <h2 class="text-lg font-bold text-amber-400 mb-2">1. Mục Đích & Phạm Vi Áp Dụng</h2>
+                        <p class="text-slate-400">Quy định này thiết lập sơ đồ tổ chức bộ máy, phân định rõ ràng quyền hạn và trách nhiệm của các phòng ban thuộc Công ty TheVan, áp dụng cho toàn thể nhân sự và các đối tác liên kết vận hành.</p>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-amber-400 mb-2">2. Sơ Đồ Khối Chức Năng</h2>
+                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 font-mono text-xs text-emerald-400 space-y-1">
+                            <p>[Ban Giám Đốc] ───► [Bộ Phận Tư Vấn Kế Toán & Thuế]</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├───────► [Khối Tiêu Chuẩn Hóa Vận Hành (SOP)]</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└───────► [Trung Tâm Tự Động Hóa & AI]</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-amber-400 mb-2">3. Trách Nhiệm Cốt Lõi</h2>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-400">
+                            <li><strong class="text-slate-200">Khối SOP:</strong> Đảm bảo 100% quy trình làm việc được số hóa và chuẩn hóa văn bản.</li>
+                            <li><strong class="text-slate-200">Khối Kế Toán:</strong> Đảm bảo tính tuân thủ pháp lý và tối ưu dòng tiền tài chính.</li>
+                            <li><strong class="text-slate-200">Khối AI & Automation:</strong> Tích hợp luồng n8n và Trợ lý tri thức doanh nghiệp.</li>
+                        </ul>
+                    </div>
+                `
+            },
+            doc2: {
+                title: "QD-02-Bao-Mat-Du-Lieu.md",
+                meta: "Đồng bộ từ Hệ thống An ninh Thông tin TheVan",
+                content: `
+                    <div>
+                        <h2 class="text-lg font-bold text-amber-400 mb-2">1. Quy Định Bảo Mật Dữ Liệu</h2>
+                        <p class="text-slate-400">Tất cả dữ liệu kế toán, mã nguồn hệ thống và thông tin khách hàng phải được mã hóa chuẩn hóa và phân quyền theo cấp bậc.</p>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-amber-400 mb-2">2. Cấp Độ Truy Cập</h2>
+                        <p class="text-slate-400">Chỉ nhân sự được ủy quyền mới có thể truy vấn các tài liệu thuộc thư mục Kế Toán & Chiến Lược Tài Chính.</p>
+                    </div>
+                `
+            },
+            doc3: {
+                title: "QD-03-Danh-Gia-KPI.md",
+                meta: "Đã ban hành bởi Ban Giám Đốc",
+                content: `
+                    <div>
+                        <h2 class="text-lg font-bold text-amber-400 mb-2">Tiêu Chí Đánh Giá KPI Hàng Tháng</h2>
+                        <p class="text-slate-400">Đánh giá dựa trên tỷ lệ hoàn thành đúng tiến độ các quy trình chuẩn hóa SOP và mức độ hài lòng của khách hàng tư vấn.</p>
+                    </div>
+                `
+            },
+            doc4: {
+                title: "SOP-KT-01-Lap-Bao-Cao-Tai-Chinh.md",
+                meta: "Quy trình thao tác chuẩn kế toán nội bộ",
+                content: `
+                    <div>
+                        <h2 class="text-lg font-bold text-amber-400 mb-2">Quy Trình Lập Báo Cáo Tài Chính Quản Trị</h2>
+                        <p class="text-slate-400">Bước 1: Thu thập hóa đơn & chứng từ gốc qua OCR.<br/>Bước 2: Đối soát số liệu kế toán trên Google Sheets/Excel.<br/>Bước 3: Lập báo cáo dòng tiền và trình duyệt Ban Lãnh Đạo.</p>
+                    </div>
+                `
+            },
+            doc5: {
+                title: "SOP-AI-02-Tich-Hop-n8n-Workflow.md",
+                meta: "Tài liệu kỹ thuật khối Tự Động Hóa",
+                content: `
+                    <div>
+                        <h2 class="text-lg font-bold text-amber-400 mb-2">Hướng Dẫn Triển Khai Luồng n8n Automation</h2>
+                        <p class="text-slate-400">Cấu hình Webhook kết nối Telegram Bot với AI Agent để tự động phản hồi yêu cầu tra cứu quy trình từ nhân sự.</p>
+                    </div>
+                `
+            },
+            doc6: {
+                title: "BM-01-Bang-Kiem-Soat-Noi-Bo.xlsx",
+                meta: "Mẫu biểu tải về dạng Spreadsheet",
+                content: `
+                    <div>
+                        <h2 class="text-lg font-bold text-amber-400 mb-2">Mẫu Bảng Kiểm Soát Vận Hành Nội Bộ</h2>
+                        <p class="text-slate-400">Mẫu file sẵn các công thức tự động tính toán tiến độ hoàn thành SOP cho từng phòng ban.</p>
+                    </div>
+                `
+            }
+        };
+
+        // 1. Đóng mở thư mục Cây 3 cấp
+        function toggleFolder(folderId, element) {
+            const folderContent = document.getElementById(folderId);
+            const icon = element.querySelector('.fa-chevron-down, .fa-chevron-right');
+            const folderIcon = element.querySelector('.folder-icon');
+
+            if (folderContent.classList.contains('hidden')) {
+                folderContent.classList.remove('hidden');
+                if (icon) {
+                    icon.classList.remove('fa-chevron-right');
+                    icon.classList.add('fa-chevron-down');
+                }
+                if (folderIcon) {
+                    folderIcon.classList.remove('fa-folder');
+                    folderIcon.classList.add('fa-folder-open', 'text-amber-500');
+                }
+            } else {
+                folderContent.classList.add('hidden');
+                if (icon) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-right');
+                }
+                if (folderIcon) {
+                    folderIcon.classList.remove('fa-folder-open', 'text-amber-500');
+                    folderIcon.classList.add('fa-folder');
+                }
+            }
+        }
+
+        // 2. Chuyển đổi Document khi click
+        function loadDocument(docKey, element) {
+            const doc = docDatabase[docKey];
+            if (!doc) return;
+
+            // Highlight mục chọn
+            document.querySelectorAll('.doc-item').forEach(item => {
+                item.className = "doc-item flex items-center space-x-2 p-1.5 rounded text-slate-400 hover:text-slate-200 hover:bg-slate-900/50 cursor-pointer";
+            });
+            element.className = "doc-item flex items-center space-x-2 p-1.5 rounded bg-amber-500/10 text-amber-300 font-medium border border-amber-500/30 cursor-pointer";
+
+            // Cập nhật giao diện bên phải
+            document.getElementById('docViewerTitle').innerText = doc.title;
+            document.getElementById('docViewerMeta').innerText = doc.meta;
+            document.getElementById('docViewerBody').innerHTML = doc.content;
+        }
+
+        // 3. Tìm kiếm tài liệu tự động (Search Filter)
+        function filterDocs() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const docs = document.querySelectorAll('.doc-item');
+
+            docs.forEach(doc => {
+                const title = doc.querySelector('.doc-title').innerText.toLowerCase();
+                if (title.includes(input)) {
+                    doc.style.display = "flex";
+                } else {
+                    doc.style.display = "none";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
