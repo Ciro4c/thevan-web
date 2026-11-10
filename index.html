@@ -1,192 +1,175 @@
 <!DOCTYPE html>
-<html lang="vi" class="scroll-smooth">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TheVan Co., Ltd | Tiêu chuẩn hóa Vận hành & Tư vấn Quản trị</title>
+    <title>TheVan | Tư Vấn Quản Trị, Tiêu Chuẩn Hóa Vận Hành & Tự Động Hóa AI</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        slate900: '#0f172a',
-                        slate800: '#1e293b',
-                        gold600: '#d97706',
-                        gold500: '#f59e0b',
-                        gold400: '#fbbf24',
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); }
+        .accent-gradient { background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%); }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
     </style>
 </head>
-<body class="bg-slate-900 text-slate-100 antialiased selection:bg-gold500 selection:text-slate-900">
+<body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-amber-500 selection:text-slate-950">
 
-    <!-- HEADER / NAVIGATION -->
-    <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-gold600 to-gold400 flex items-center justify-center font-bold text-slate-900 text-xl shadow-lg shadow-gold600/20">
-                    V
-                </div>
+    <!-- NAVIGATION BAR -->
+    <nav class="sticky top-0 z-50 glass-card border-b border-slate-800/80 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3 cursor-pointer">
+                <div class="w-10 h-10 rounded-xl accent-gradient flex items-center justify-center font-black text-slate-950 text-xl shadow-lg shadow-amber-500/20">V</div>
                 <div>
-                    <span class="text-xl font-extrabold tracking-wider text-white">THEVAN</span>
-                    <span class="block text-[10px] tracking-widest text-gold400 uppercase font-semibold">Operations & Accounting Consulting</span>
+                    <span class="text-xl font-bold tracking-wider text-white block leading-none">THEVAN</span>
+                    <span class="text-[10px] text-amber-400 font-medium tracking-widest uppercase">Operations & Consulting</span>
                 </div>
             </div>
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
-                <a href="#services" class="hover:text-gold400 transition">Dịch vụ</a>
-                <a href="#courses" class="hover:text-gold400 transition">Khóa học</a>
-                <a href="#projects" class="hover:text-gold400 transition">Dự án tiêu biểu</a>
-                <a href="#vault" class="hover:text-gold400 transition">Hệ thống Tra cứu</a>
-            </nav>
-            <div>
-                <a href="#contact" class="hidden sm:inline-flex items-center px-5 py-2.5 rounded-lg bg-gold500 hover:bg-gold400 text-slate-900 font-bold text-sm transition shadow-lg shadow-gold500/20">
-                    <i class="fa-solid fa-phone mr-2"></i> Liên hệ tư vấn
-                </a>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#dich-vu" class="hover:text-amber-400 transition">Dịch Vụ Cốt Lõi</a>
+                <a href="#khoa-hoc" class="hover:text-amber-400 transition">Chương Trình Đào Tạo</a>
+                <a href="#tra-cuu" class="hover:text-amber-400 transition">Hệ Thống Tra Cứu SOP</a>
+                <a href="#lien-he" class="hover:text-amber-400 transition">Liên Hệ</a>
             </div>
+
+            <a href="#lien-he" class="accent-gradient text-slate-950 font-bold px-5 py-2.5 rounded-lg shadow-lg hover:brightness-110 transition text-sm">
+                Đăng Ký Tư Vấn
+            </a>
         </div>
-    </header>
+    </nav>
 
     <!-- HERO SECTION -->
-    <section class="relative overflow-hidden py-24 lg:py-32 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gold500/10 text-gold400 border border-gold500/20 mb-6">
-                <i class="fa-solid fa-shield-halved mr-2"></i> Chuẩn hóa Vận hành & Quản trị Doanh nghiệp
-            </span>
-            <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight">
-                Kiến Tạo Hệ Thống Vận Hành <br class="hidden sm:inline">
-                <span class="bg-gradient-to-r from-gold400 to-amber-200 bg-clip-text text-transparent">Vững Chắc & Tự Động Hóa</span>
-            </h1>
-            <p class="max-w-3xl mx-auto text-lg sm:text-xl text-slate-300 mb-10">
-                TheVan cung cấp giải pháp tiêu chuẩn hóa quy trình hoạt động, tư vấn kế toán tài chính chiến lược và tích hợp tự động hóa ứng dụng AI dành riêng cho doanh nghiệp vừa và nhỏ.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#services" class="px-8 py-4 rounded-xl bg-gold500 hover:bg-gold400 text-slate-900 font-bold text-base transition shadow-xl shadow-gold500/20">
-                    Khám phá Dịch vụ <i class="fa-solid fa-arrow-right ml-2"></i>
-                </a>
-                <a href="#courses" class="px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-base transition border border-slate-700">
-                    Chương trình Đào tạo
-                </a>
+    <section class="relative overflow-hidden pt-20 pb-28 gradient-bg border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Tư Vấn Quản Trị & Tiêu Chuẩn Hóa Doanh Nghiệp</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+                    Kiến Tạo Hệ Thống <br/>
+                    <span class="bg-gradient-to-r from-amber-400 via-amber-200 to-amber-500 bg-clip-text text-transparent">Vận Hành Vững Chắc</span> & Tự Động Hóa AI
+                </h1>
+                <p class="text-slate-400 text-base md:text-lg leading-relaxed">
+                    TheVan đồng hành cùng doanh nghiệp tư vấn tài chính kế toán chiến lược, thiết kế chuẩn hóa quy trình SOP bài bản và tích hợp các giải pháp tự động hóa AI tối ưu hiệu suất.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="#dich-vu" class="accent-gradient text-slate-950 font-bold px-7 py-3.5 rounded-xl shadow-xl hover:scale-105 transition text-center">
+                        Khám Phá Dịch Vụ <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#tra-cuu" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-7 py-3.5 rounded-xl border border-slate-700 transition text-center">
+                        Tra Cứu Quy Trình SOP
+                    </a>
+                </div>
+            </div>
+
+            <!-- Dashboard Card Preview -->
+            <div class="relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-600 rounded-2xl blur opacity-25"></div>
+                <div class="relative glass-card p-6 rounded-2xl space-y-6">
+                    <div class="flex justify-between items-center border-b border-slate-700/60 pb-4">
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <span class="text-xs text-slate-400 font-mono">TheVan Core Operating System v2.5</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                            <span class="text-slate-400 text-xs block">Tối Ưu Quy Trình</span>
+                            <span class="text-2xl font-bold text-amber-400">+45% Efficiency</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                            <span class="text-slate-400 text-xs block">Chuẩn Hóa Kế Toán</span>
+                            <span class="text-2xl font-bold text-emerald-400">100% Compliance</span>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-3">
+                        <div class="flex justify-between text-xs text-slate-300">
+                            <span>Tích hợp Tự động hóa Workflow (n8n/AI)</span>
+                            <span class="text-amber-400">Active</span>
+                        </div>
+                        <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-amber-400 h-full w-[88%] rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
-    <section id="services" class="py-20 bg-slate-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold text-white mb-4">Dịch Vụ Cốt Lõi</h2>
-                <p class="text-slate-400">Các giải pháp chuyên sâu giúp tối ưu hóa nguồn lực và vận hành doanh nghiệp.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-8 hover:border-gold500/50 transition group">
-                    <div class="w-14 h-14 rounded-xl bg-gold500/10 text-gold400 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold500 group-hover:text-slate-900 transition">
-                        <i class="fa-solid fa-gears"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Tiêu chuẩn hóa Vận hành & SOP</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Xây dựng hệ thống quy trình chuẩn (SOP), khung vận hành tối ưu giúp doanh nghiệp vận hành trơn tru không phụ thuộc cá nhân.</p>
-                </div>
-                <!-- Card 2 -->
-                <div class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-8 hover:border-gold500/50 transition group">
-                    <div class="w-14 h-14 rounded-xl bg-gold500/10 text-gold400 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold500 group-hover:text-slate-900 transition">
-                        <i class="fa-solid fa-calculator"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Tư vấn Kế toán & Tài chính</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Thiết lập hệ thống kiểm soát dòng tiền, báo cáo quản trị chuyên sâu và tối ưu hóa chi phí tuân thủ pháp luật thuế.</p>
-                </div>
-                <!-- Card 3 -->
-                <div class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-8 hover:border-gold500/50 transition group">
-                    <div class="w-14 h-14 rounded-xl bg-gold500/10 text-gold400 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold500 group-hover:text-slate-900 transition">
-                        <i class="fa-solid fa-robot"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Tự động hóa & Ứng dụng AI</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Ứng dụng n8n, Python, AI agents vào quy trình xử lý dữ liệu, báo cáo tự động giúp tiết kiệm 70% thời gian thủ công.</p>
-                </div>
-            </div>
+    <!-- CORE SERVICES -->
+    <section id="dich-vu" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-white">Dịch Vụ Cốt Lõi Tại TheVan</h2>
+            <p class="text-slate-400">Giải pháp toàn diện giúp doanh nghiệp xây dựng nền tảng vững chắc và bứt phá quy mô.</p>
         </div>
-    </section>
 
-    <!-- COURSES SECTION -->
-    <section id="courses" class="py-20 bg-slate-800/50 border-t border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-xs font-bold uppercase tracking-widest text-gold400 mb-2 block">Chương trình chuyên sâu</span>
-                <h2 class="text-3xl font-bold text-white mb-4">Khóa Học & Đào Tạo Doanh Nghiệp</h2>
-                <p class="text-slate-400">Nâng cao năng lực vận hành và tư duy hệ thống cho đội ngũ quản lý.</p>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="glass-card p-8 rounded-2xl hover:border-amber-500/50 transition group">
+                <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition">
+                    <i class="fa-solid fa-sitemap"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Chuẩn Hóa Vận Hành (SOP)</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                    Xây dựng bộ quy trình thao tác chuẩn (SOP), phân định rõ vai trò và tiêu chí đánh giá KPI cho từng vị trí phòng ban.
+                </p>
+                <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                    <li><i class="fa-solid fa-check text-amber-400 mr-2"></i>Sơ đồ hóa quy trình làm việc</li>
+                    <li><i class="fa-solid fa-check text-amber-400 mr-2"></i>Ma trận trách nhiệm RACI</li>
+                </ul>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Course 1 -->
-                <div class="bg-slate-900 border border-slate-700 rounded-xl p-6 flex flex-col justify-between">
-                    <div>
-                        <div class="text-xs text-gold400 font-semibold mb-2">VẬN HÀNH</div>
-                        <h4 class="text-lg font-bold text-white mb-2">SOP & Chuẩn hóa Operations</h4>
-                        <p class="text-slate-400 text-xs mb-4">Thiết kế và thực thi hệ thống quy trình vận hành toàn diện cho SME.</p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-800 flex justify-between items-center text-xs text-slate-400">
-                        <span><i class="fa-regular fa-clock mr-1"></i> 8 tuần</span>
-                        <a href="#contact" class="text-gold400 font-semibold hover:underline">Đăng ký →</a>
-                    </div>
+
+            <!-- Card 2 -->
+            <div class="glass-card p-8 rounded-2xl hover:border-amber-500/50 transition group">
+                <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition">
+                    <i class="fa-solid fa-calculator"></i>
                 </div>
-                <!-- Course 2 -->
-                <div class="bg-slate-900 border border-slate-700 rounded-xl p-6 flex flex-col justify-between">
-                    <div>
-                        <div class="text-xs text-gold400 font-semibold mb-2">TÀI CHÍNH</div>
-                        <h4 class="text-lg font-bold text-white mb-2">Kiểm soát Tài chính Doanh nghiệp</h4>
-                        <p class="text-slate-400 text-xs mb-4">Làm chủ dòng tiền, cấu trúc chi phí và lập kế hoạch ngân sách.</p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-800 flex justify-between items-center text-xs text-slate-400">
-                        <span><i class="fa-regular fa-clock mr-1"></i> 6 tuần</span>
-                        <a href="#contact" class="text-gold400 font-semibold hover:underline">Đăng ký →</a>
-                    </div>
+                <h3 class="text-xl font-bold text-white mb-3">Tư Vấn Kế Toán & Tài Chính</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                    Tối ưu hệ thống kế toán nội bộ, rà soát rủi ro thuế và lập báo cáo quản trị giúp ban lãnh đạo ra quyết định chuẩn xác.
+                </p>
+                <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                    <li><i class="fa-solid fa-check text-amber-400 mr-2"></i>Báo cáo tài chính quản trị</li>
+                    <li><i class="fa-solid fa-check text-amber-400 mr-2"></i>Tối ưu chi phí & dòng tiền</li>
+                </ul>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="glass-card p-8 rounded-2xl hover:border-amber-500/50 transition group">
+                <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition">
+                    <i class="fa-solid fa-robot"></i>
                 </div>
-                <!-- Course 3 -->
-                <div class="bg-slate-900 border border-slate-700 rounded-xl p-6 flex flex-col justify-between">
-                    <div>
-                        <div class="text-xs text-gold400 font-semibold mb-2">CÔNG NGHỆ</div>
-                        <h4 class="text-lg font-bold text-white mb-2">Tự động hóa với AI & n8n</h4>
-                        <p class="text-slate-400 text-xs mb-4">Xây dựng các pipeline tự động hóa quy trình làm việc không cần code nhiều.</p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-800 flex justify-between items-center text-xs text-slate-400">
-                        <span><i class="fa-regular fa-clock mr-1"></i> 6 tuần</span>
-                        <a href="#contact" class="text-gold400 font-semibold hover:underline">Đăng ký →</a>
-                    </div>
-                </div>
-                <!-- Course 4 -->
-                <div class="bg-slate-900 border border-slate-700 rounded-xl p-6 flex flex-col justify-between">
-                    <div>
-                        <div class="text-xs text-gold400 font-semibold mb-2">GIÁO DỤC</div>
-                        <h4 class="text-lg font-bold text-white mb-2">Thiết kế CTĐT Chuẩn AUN-QA</h4>
-                        <p class="text-slate-400 text-xs mb-4">Xây dựng chuẩn đầu ra (PLO/PI), khung chương trình đào tạo đại học.</p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-800 flex justify-between items-center text-xs text-slate-400">
-                        <span><i class="fa-regular fa-clock mr-1"></i> 10 tuần</span>
-                        <a href="#contact" class="text-gold400 font-semibold hover:underline">Đăng ký →</a>
-                    </div>
-                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Tự Động Hóa & Tích Hợp AI</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                    Số hóa quy trình thủ công bằng luồng tự động n8n, trợ lý AI và công cụ báo cáo dashboard thông minh.
+                </p>
+                <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                    <li><i class="fa-solid fa-check text-amber-400 mr-2"></i>Tự động hóa luồng dữ liệu</li>
+                    <li><i class="fa-solid fa-check text-amber-400 mr-2"></i>Trợ lý AI truy vấn tri thức</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer id="contact" class="bg-slate-900 border-t border-slate-800 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div>
-                <span class="text-lg font-extrabold tracking-wider text-white">THEVAN CO., LTD</span>
-                <p class="text-xs text-slate-400 mt-1">Cần Thơ, Việt Nam | Chuyên chuẩn hóa vận hành & kế toán.</p>
+    <footer id="lien-he" class="border-t border-slate-800 bg-slate-950 py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="space-y-2 text-center md:text-left">
+                <div class="text-lg font-bold text-white">CÔNG TY TNHH THEVAN</div>
+                <p class="text-xs text-slate-400">Chuyên tư vấn chuẩn hóa vận hành, tài chính kế toán & giải pháp tự động hóa.</p>
+                <p class="text-xs text-slate-500">Địa bàn hoạt động chính: Cần Thơ & Đồng bằng Sông Cửu Long</p>
             </div>
-            <div class="text-xs text-slate-400 text-center md:text-right">
-                <p>&copy; 2025 - 2026 TheVan. All rights reserved.</p>
+            <div class="text-xs text-slate-400 text-center md:text-right space-y-1">
+                <p>© 2026 TheVan Co., Ltd. All rights reserved.</p>
+                <p class="text-slate-500">Built with Precision & Excellence</p>
             </div>
         </div>
     </footer>
