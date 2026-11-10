@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tra cứu SOP</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Cổng mã truy cập (tuỳ chọn, xem config.js) -->
+<div id="gate" hidden>
+  <form id="gateForm">
+    <h2>Tra cứu SOP</h2>
+    <p>Nhập mã truy cập và tên của bạn</p>
+    <input id="gateName" placeholder="Họ và tên / email" autocomplete="off" required>
+    <input id="gateCode" type="password" placeholder="Mã truy cập" autocomplete="off">
+    <button>Vào hệ thống</button>
+    <small id="gateErr"></small>
+  </form>
+</div>
+
+<div id="app" hidden>
+  <header>
+    <div class="brand"><span class="logo">SOP</span><div><b>Tra cứu SOP</b><small>Hệ thống SOP Quản lý Chung cư</small></div></div>
+    <div class="searchbox">
+      <input id="q" placeholder="Tìm theo mã, tên văn bản hoặc nội dung...  (phím /)" autocomplete="off">
+      <label><input type="checkbox" id="inContent" checked> Nội dung</label>
+    </div>
+    <nav>
+      <button data-view="table">Bảng tổng</button>
+      <button data-view="map" class="on">Sơ đồ</button>
+      <button data-view="search">Tra cứu</button>
+    </nav>
+    <div class="user" id="userLabel"></div>
+  </header>
+
+  <div class="body">
+    <aside>
+      <input id="treeFilter" placeholder="Lọc cây thư mục...">
+      <div id="tree"></div>
+    </aside>
+
+    <main>
+      <div class="bar">
+        <div><h3 id="viewTitle">Sơ đồ hệ thống văn bản</h3><small id="viewSub"></small></div>
+        <div class="tools" id="mapTools">
+          <button id="expandAll">Mở rộng tất cả</button>
+          <button id="collapseAll">Thu gọn</button>
+          <button id="zOut">−</button><span id="zLbl">100%</span><button id="zIn">+</button><button id="zFit">⤢</button>
+        </div>
+      </div>
+      <div id="stage">
+        <div id="viewMap" class="view"><div id="canvas"><svg id="links"></svg><div id="nodes"></div></div></div>
+        <div id="viewTable" class="view" hidden></div>
+        <div id="viewSearch" class="view" hidden></div>
+      </div>
+    </main>
+
+    <section id="preview" hidden>
+      <div class="phead">
+        <div><span class="code" id="pCode"></span> <b id="pTitle"></b>
+          <small id="pMeta"></small><small id="pPath"></small></div>
+        <button id="pClose">✕</button>
+      </div>
+      <div id="pBody"><div id="docPage"></div></div>
+    </section>
+  </div>
+</div>
+
+<div id="shield">Nội dung đã được ẩn.<br>Quay lại cửa sổ này để tiếp tục xem.</div>
+<div id="wm"></div>
+
+<script src="config.js"></script>
+<script src="protect.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
